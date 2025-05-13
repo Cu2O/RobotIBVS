@@ -6,6 +6,14 @@ ubuntu18.04 + python3.8 + torch1.11 + ros melodic
 
 具体配环境方法可参考：https://blog.csdn.net/Chris121345/article/details/122563536
 
+
+### Yolov5包
+通过网盘分享的文件：Yolov5_ros.zip
+链接: https://pan.baidu.com/s/17ybWmtQZ_Hb5RbViyzZQ3A 提取码: s2hi 
+--来自百度网盘超级会员v1的分享
+
+放入robot_visionservo下，与description/gazebo/plan/moveit并列。
+
 ### python3环境验证
 在目录```\robot_visionservo\Yolov5_ros\yolov5_ros\yolov5_ros\yolov5```下
 
@@ -51,5 +59,5 @@ https://blog.csdn.net/qq_48427527/article/details/124477608?spm=1001.2014.3001.5
 
 ## 感谢
 感谢中文博客论坛
-https://blog.csdn.net/qq_48427527/article/details/129134102
+https://github.com/Lord-Z/sunday?tab=readme-ov-file
 对上述内容启发。
