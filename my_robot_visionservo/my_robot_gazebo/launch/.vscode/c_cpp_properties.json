@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/haiden/catkin_ws/devel/include/**",
+        "/opt/ros/kinetic/include/**",
+        "/home/haiden/catkin_ws/src/my_robot/my_robot_description/include/**",
+        "/home/haiden/catkin_ws/src/my_robot/my_robot_gazebo/include/**",
+        "/home/haiden/catkin_ws/src/my_robot/my_robot_planing/include/**",
+        "/home/haiden/catkin_ws/src/my_robot/dh_robotics_ag95_gripper/dh_robotics_ag95_simulation/roboticsgroup_gazebo_plugins/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

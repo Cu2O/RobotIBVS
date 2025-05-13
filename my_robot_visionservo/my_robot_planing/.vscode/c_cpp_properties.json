@@ -1,0 +1,54 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/haiden/catkin_ws/devel/include/**",
+        "/home/haiden/turtlebot/devel/include/**",
+        "/home/haiden/kobuki/devel/include/**",
+        "/home/haiden/rocon/devel/include/**",
+        "/opt/ros/kinetic/include/**",
+        "/home/haiden/turtlebot/src/turtlebot_create_desktop/create_gazebo_plugins/include/**",
+        "/home/haiden/kobuki/src/kobuki/kobuki_auto_docking/include/**",
+        "/home/haiden/kobuki/src/kobuki/kobuki_bumper2pc/include/**",
+        "/home/haiden/kobuki/src/kobuki/kobuki_controller_tutorial/include/**",
+        "/home/haiden/kobuki/src/kobuki_core/kobuki_dock_drive/include/**",
+        "/home/haiden/kobuki/src/kobuki_core/kobuki_driver/include/**",
+        "/home/haiden/kobuki/src/kobuki_core/kobuki_ftdi/include/**",
+        "/home/haiden/kobuki/src/kobuki_desktop/kobuki_gazebo_plugins/include/**",
+        "/home/haiden/kobuki/src/kobuki/kobuki_keyop/include/**",
+        "/home/haiden/kobuki/src/kobuki/kobuki_node/include/**",
+        "/home/haiden/kobuki/src/kobuki/kobuki_random_walker/include/**",
+        "/home/haiden/kobuki/src/kobuki/kobuki_safety_controller/include/**",
+        "/home/haiden/catkin_ws/src/my_robot/my_robot_description/include/**",
+        "/home/haiden/catkin_ws/src/my_robot/my_robot_gazebo/include/**",
+        "/home/haiden/catkin_ws/src/my_robot/my_robot_planing/include/**",
+        "/home/haiden/turtlebot/src/turtlebot_apps/turtlebot_actions/include/**",
+        "/home/haiden/kobuki/src/yujin_ocs/yocs_ar_marker_tracking/include/**",
+        "/home/haiden/kobuki/src/yujin_ocs/yocs_ar_pair_tracking/include/**",
+        "/home/haiden/kobuki/src/yujin_ocs/yocs_cmd_vel_mux/include/**",
+        "/home/haiden/kobuki/src/yujin_ocs/yocs_controllers/include/**",
+        "/home/haiden/kobuki/src/yujin_ocs/yocs_diff_drive_pose_controller/include/**",
+        "/home/haiden/kobuki/src/yujin_ocs/yocs_keyop/include/**",
+        "/home/haiden/kobuki/src/yujin_ocs/yocs_math_toolkit/include/**",
+        "/home/haiden/kobuki/src/yujin_ocs/yocs_navi_toolkit/include/**",
+        "/home/haiden/kobuki/src/yujin_ocs/yocs_navigator/include/**",
+        "/home/haiden/kobuki/src/yujin_ocs/yocs_safety_controller/include/**",
+        "/home/haiden/kobuki/src/yujin_ocs/yocs_velocity_smoother/include/**",
+        "/home/haiden/kobuki/src/yujin_ocs/yocs_virtual_sensor/include/**",
+        "/home/haiden/kobuki/src/yujin_ocs/yocs_waypoint_provider/include/**",
+        "/home/haiden/kobuki/src/yujin_ocs/yocs_waypoints_navi/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

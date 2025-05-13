@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="claw" params="parent *origin">
+    <joint
+      name="fixed_world_base"
+      type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent
+        link="${parent}" />
+      <child
+        link="claw_base" />
+    </joint>
+    <link
+      name="claw_base">
+      <inertial>
+        <origin
+          xyz="5.4012E-18 2.1334E-17 0.023019"
+          rpy="0 0 0" />
+        <mass
+          value="0.080501" />
+        <inertia
+          ixx="1.8886E-05"
+          ixy="-2.0815E-08"
+          ixz="1.0573E-21"
+          iyy="2.9317E-05"
+          iyz="7.4453E-22"
+          izz="3.2067E-05" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://my_robot_description/meshes/claw/claw_base.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.50196 0.50196 0.50196 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://my_robot_description/meshes/claw/claw_base.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <link
+      name="claw_one">
+      <inertial>
+        <origin
+          xyz="-7.6921E-17 4.1924E-19 -0.0039938"
+          rpy="0 0 0" />
+        <mass
+          value="0.0042365" />
+        <inertia
+          ixx="1.4078E-07"
+          ixy="9.8628E-24"
+          ixz="-2.1932E-24"
+          iyy="4.5517E-07"
+          iyz="6.592E-25"
+          izz="5.2655E-07" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://my_robot_description/meshes/claw/claw_one.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0 0 1 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://my_robot_description/meshes/claw/claw_one.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint
+      name="claw_base_one"
+      type="prismatic">
+      <origin
+        xyz="0 0 0.05165"
+        rpy="0 0 0" />
+      <parent
+        link="claw_base" />
+      <child
+        link="claw_one" />
+      <axis
+        xyz="0 0 1" />
+      <limit
+        lower="-0.0015"
+        upper="0.007"
+        effort="100"
+        velocity="0.1" />
+    </joint>
+
+    <link
+      name="claw_twoL">
+      <inertial>
+        <origin
+          xyz="0.00206295371562359 0.00864097503536181 8.50434309892742E-19"
+          rpy="0 0 0" />
+        <mass
+          value="0.00175563495408494" />
+        <inertia
+          ixx="9.71980123897496E-08"
+          ixy="-1.11007939107302E-08"
+          ixz="-8.94529532639305E-25"
+          iyy="5.33509712793333E-08"
+          iyz="3.80935260729761E-24"
+          izz="6.85065024265259E-08" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://my_robot_description/meshes/claw/claw_twoL.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="1 0 0 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://my_robot_description/meshes/claw/claw_twoL.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint
+      name="claw_one_twoL"
+      type="revolute">
+      <origin
+        xyz="-0.018 0 -0.004"
+        rpy="1.5708 0 3.1416" />
+      <parent
+        link="claw_one" />
+      <child
+        link="claw_twoL" />
+      <axis
+        xyz="0 0 -1" />
+      <!--limit
+        lower="-0.03"
+        upper="0.13"
+        effort="100"
+        velocity="0.1" /-->
+      <limit
+        lower="-3.14"
+        upper="3.14"
+        effort="100"
+        velocity="0.1" />
+      <mimic joint="claw_base_one" multiplier="-4" offset="0" />
+    </joint>
+    <link
+      name="claw_threeL">
+      <inertial>
+        <origin
+          xyz="0.028706 0.0020025 -8.7811E-10"
+          rpy="0 0 0" />
+        <mass
+          value="0.01668" />
+        <inertia
+          ixx="2.8352E-06"
+          ixy="-2.4709E-06"
+          ixz="6.6257E-13"
+          iyy="5.97E-06"
+          iyz="3.3361E-13"
+          izz="8.1185E-06" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://my_robot_description/meshes/claw/claw_threeL.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0 1 0 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://my_robot_description/meshes/claw/claw_threeL.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint
+      name="claw_twoL_threeL"
+      type="revolute">
+      <origin
+        xyz="0.003251 0.013617 0"
+        rpy="0 0 1.3364" />
+      <parent
+        link="claw_twoL" />
+      <child
+        link="claw_threeL" />
+      <axis
+        xyz="0 0 -1" />
+      <limit
+        lower="-3.14"
+        upper="3.14"
+        effort="100"
+        velocity="0.1" />
+      <mimic joint="claw_base_one" multiplier="70" offset="0" />
+    </joint>
+    <link
+      name="claw_twoR">
+      <inertial>
+        <origin
+          xyz="0.002063 0.008641 -1.835E-19"
+          rpy="0 0 0" />
+        <mass
+          value="0.0017556" />
+        <inertia
+          ixx="9.7198E-08"
+          ixy="-1.1101E-08"
+          ixz="3.8218E-24"
+          iyy="5.3351E-08"
+          iyz="8.7916E-24"
+          izz="6.8507E-08" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://my_robot_description/meshes/claw/claw_twoR.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="1 0 0 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://my_robot_description/meshes/claw/claw_twoR.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint
+      name="claw_one_twoR"
+      type="revolute">
+      <origin
+        xyz="0.018 0 -0.004"
+        rpy="1.5708 0 0" />
+      <parent
+        link="claw_one" />
+      <child
+        link="claw_twoR" />
+      <axis
+        xyz="0 0 1" />
+      <limit
+        lower="-3.14"
+        upper="3.14"
+        effort="100"
+        velocity="0.1" />
+      <mimic joint="claw_base_one" multiplier="4" offset="0" />
+    </joint>
+    <link
+      name="claw_threeR">
+      <inertial>
+        <origin
+          xyz="0.028706 0.0020025 -8.7811E-10"
+          rpy="0 0 0" />
+        <mass
+          value="0.01668" />
+        <inertia
+          ixx="2.8352E-06"
+          ixy="-2.4709E-06"
+          ixz="6.6257E-13"
+          iyy="5.97E-06"
+          iyz="3.3361E-13"
+          izz="8.1185E-06" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://my_robot_description/meshes/claw/claw_threeR.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0 1 0 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://my_robot_description/meshes/claw/claw_threeR.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint
+      name="claw_twoR_threeR"
+      type="revolute">
+      <origin
+        xyz="0.003251 0.013617 0"
+        rpy="0 0 1.3364" />
+      <parent
+        link="claw_twoR" />
+      <child
+        link="claw_threeR" />
+      <axis
+        xyz="0 0 1" />
+      <limit
+        lower="-3.14"
+        upper="3.14"
+        effort="100"
+        velocity="0.1" />
+      <mimic joint="claw_base_one" multiplier="-70" offset="0" />
+    </joint>
+    <!--gazebo>
+      <joint name="claw_threeL_base" type="revolute">
+        <parent>claw_threeL</parent>
+        <child>claw_base</child>
+        <pose>-0.036 0 0.064 1.5708 0 0</pose>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-6.28</lower>
+            <upper>6.28</upper>
+            <effort>100</effort>
+            <velocity>1.0</velocity>
+          </limit>
+        </axis>
+      </joint>
+    </gazebo>
+    <gazebo>
+      <joint name="claw_threeR_base" type="revolute">
+        <parent>claw_threeR</parent>
+        <child>claw_base</child>
+        <pose>0.036 0 0.064 1.5708 0 0</pose>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-6.28</lower>
+            <upper>6.28</upper>
+            <effort>100</effort>
+            <velocity>1.0</velocity>
+          </limit>
+        </axis>
+      </joint>
+    </gazebo-->
+    <link name="claw_graspingframe"/>
+    <joint
+      name="claw_one_graspingframe"
+      type="fixed">
+      <origin
+        xyz="0 0 0.12"
+        rpy="0 0 1.5708" />
+      <parent
+        link="claw_base" />
+      <child
+        link="claw_graspingframe" />
+    </joint>
+    
+    
+    
+    <!-- ros_control plugin -->
+    <!--gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/claw</robotNamespace>
+        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        <legacyModeNS>true</legacyModeNS>
+      </plugin>
+    </gazebo-->
+    
+    <gazebo reference="claw_base">
+      <material>Gazebo/Gray</material>
+      <implicitSpringDamper>1</implicitSpringDamper>
+      <mu1>100000</mu1>
+      <mu2>100000</mu2>
+      <kp>100000000.0</kp>
+      <kd>1.0</kd>
+    </gazebo>
+    <gazebo reference="claw_one">
+      <material>Gazebo/Blue</material>
+      <mu1>100000</mu1>
+      <mu2>100000</mu2>
+      <kp>100000000.0</kp>
+      <kd>1.0</kd>
+    </gazebo>
+    <gazebo reference="claw_twoL">
+      <material>Gazebo/Red</material>
+      <mu1>100000</mu1>
+      <mu2>100000</mu2>
+      <kp>100000000.0</kp>
+      <kd>1.0</kd>
+    </gazebo>
+    <gazebo reference="claw_threeL">
+      <material>Gazebo/Green</material>
+      <mu1>100000</mu1>
+      <mu2>100000</mu2>
+      <kp>10000.0</kp>
+      <kd>0.0</kd>
+      <collision name="collision">
+        <surface>
+          <soft_contact>
+            <dart>
+              <bone_attachment>0.0000001</bone_attachment>
+              <stiffness>0.0000001</stiffness>
+              <damping>10000000000000</damping>
+              <flesh_mass_fraction>0.05</flesh_mass_fraction>
+            </dart>
+          </soft_contact>
+        </surface>
+      </collision>
+    </gazebo>
+    <gazebo reference="claw_twoR">
+      <material>Gazebo/Red</material>
+      <mu1>100000</mu1>
+      <mu2>100000</mu2>
+      <kp>100000000.0</kp>
+      <kd>1.0</kd>
+    </gazebo>
+    <gazebo reference="claw_threeR">
+      <material>Gazebo/Green</material>
+      <mu1>100000</mu1>
+      <mu2>100000</mu2>
+      <kp>10000.0</kp>
+      <kd>0.0</kd>
+      <collision name="collision">
+        <surface>
+          <soft_contact>
+            <dart>
+              <bone_attachment>0.0000001</bone_attachment>
+              <stiffness>0.0000001</stiffness>
+              <damping>10000000000000</damping>
+              <flesh_mass_fraction>0.05</flesh_mass_fraction>
+            </dart>
+          </soft_contact>
+        </surface>
+      </collision>
+    </gazebo>
+  </xacro:macro>
+</robot>

@@ -1,0 +1,37 @@
+arm_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+     - joint2_to_joint1
+     - joint3_to_joint2
+     - joint4_to_joint3
+     - joint5_to_joint4
+     - joint6_to_joint5
+     - joint6output_to_joint6
+  constraints:
+      goal_time: 1.0
+      stopped_velocity_tolerance: 0.5
+      joint2_to_joint1: {trajectory: 1, goal: 1}
+      joint3_to_joint2: {trajectory: 1, goal: 1}
+      joint4_to_joint3: {trajectory: 1, goal: 1}
+      joint5_to_joint4: {trajectory: 1, goal: 1}
+      joint6_to_joint5: {trajectory: 1, goal: 1}
+      joint6output_to_joint6: {trajectory: 1, goal: 1}
+  gains:
+      joint2_to_joint1: {p: 100,  d: 1, i: 1, i_clamp: 1}
+      joint3_to_joint2: {p: 100,  d: 1, i: 1, i_clamp: 1}
+      joint4_to_joint3: {p: 100,  d: 1, i: 1, i_clamp: 1}
+      joint5_to_joint4: {p: 100,  d: 1, i: 1, i_clamp: 1}
+      joint6_to_joint5: {p: 100,  d: 1, i: 1, i_clamp: 1}
+      joint6output_to_joint6: {p: 100,  d: 1, i: 1, i_clamp: 1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10
+joint_group_position_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+     - joint2_to_joint1
+     - joint3_to_joint2
+     - joint4_to_joint3
+     - joint5_to_joint4
+     - joint6_to_joint5
+     - joint6output_to_joint6

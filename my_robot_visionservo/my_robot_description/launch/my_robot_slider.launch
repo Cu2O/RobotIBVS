@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- Load URDF, rviz, etc. on the parameter server,加载参数服务器上的URDF、rviz等 -->
+	<!--arg name="model" default="$(find my_robot_description)/urdf/robot.urdf.xacro"/>
+	<arg name="rvizconfig" default="$(find my_robot_description)/config/mycobot_600.rviz" />
+	<arg name="gui" default="true" /-->
+	
+	<include file="$(find my_robot_description)/launch/robot_upload.launch"/>
+	<node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" >
+      <param name="use_gui" value="true"/>
+    </node>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find my_robot_description)/config/ur5_view.rviz" required="true" />
+	<!-- Add model control,添加模型控制 -->
+    <!--include file="$(find my_robot_description)/launch/slider_control.launch">
+		<arg name="model" value="$(arg model)" />
+		<arg name="rvizconfig" value="$(arg rvizconfig)" />
+		<arg name="gui" value="$(arg gui)" />
+    </include-->
+</launch>
